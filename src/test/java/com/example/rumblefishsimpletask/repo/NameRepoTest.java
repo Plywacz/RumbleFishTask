@@ -7,6 +7,7 @@ import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,7 +18,7 @@ class NameRepoTest {
 
     @BeforeEach
     void setUp() {
-        nameRepo = new NameRepo();
+        nameRepo = new NameRepo(new HashSet<>());
     }
 
     @Test

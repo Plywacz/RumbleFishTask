@@ -6,7 +6,6 @@ import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import static java.util.Collections.unmodifiableSet;
@@ -14,7 +13,11 @@ import static java.util.Collections.unmodifiableSet;
 @Log4j2
 @Repository
 class NameRepo implements Repo<Name> {
-    private final Set<Name> data = new HashSet<>();
+    private final Set<Name> data;
+
+    NameRepo(Set<Name> data) {
+        this.data = data;
+    }
 
     @Override
     public Name save(Name name) {
